@@ -9,6 +9,7 @@
       <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.0/angular.min.js"></script>
       <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-sanitize.js"></script>
       <script src="Angular.js"></script>
+      <script src="Bar.js"></script>
       <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
       <link rel="stylesheet" type="text/css" href="stile.css"/>
    </head>
@@ -24,13 +25,15 @@
             <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" ng-click="myFunction()"/>
             <label class="form-check-label text-left" for="flexSwitchCheckDefault">Light/Dark</label>
          </div>
+         <div class="progress {{tema}}">
+            <div class="progress-bar progress-bar-striped" id="myBar"></div>
+         </div>
       </div>
       
       <div ng-controller="vociMenu">
-         <div id="Menu" class="col-4 {{tema}}" ng-show="Indice">
+         <div id="Menu" class="col-6{{tema}}" ng-show="Indice">
             <nav id="navbar-example3" class="navbar {{ tema }} ">
                <nav class="nav nav-pills flex-column {{ tema }}">
-                  <h2 class="text-center">Indice</h2><br>
                   <a class="nav-link" id="div1" href="#Cover" ng-click="width={'width':'0%'}; valore=0">
                      Cover</a>
                   <a class="nav-link" href="#Introduzione" ng-click="width={'width':'3%'}; valore=3">
@@ -105,11 +108,12 @@
                      7.1.1 Articoli</a>
                   <a class="nav-link" id="div37" href="#ProfiliInstagram" ng-click="width={'width':'100%'}; valore=100">
                      7.1.2 Profili Instagram</a>
+                     <br><br><br><br><br><br>
                </nav>
             </nav>
          </div>
-         <div class="col">
-            <div data-bs-spy="scroll" class="scrollspy-example-2" data-bs-target="#navbar-example3" data-bs-offset="0" tabindex="0">
+         <div class="col" id="Scroll">
+            <div  data-bs-spy="scroll" class="scrollspy-example-2" data-bs-target="#navbar-example3" data-bs-offset="0" tabindex="0">
                <div id="Cover" ng-mouseover="width={'width':'0%'}; valore=0"><img src="img/cover.jpg" class="img-fluid rounded mx-auto d-block" alt="copertina"/><br>
                <p class="text-center"><i>A Maurizio</i></p>
                </div>
@@ -2874,7 +2878,7 @@
             </div>           
          </div>
          <div class="progress fixed-bottom">
-            <div class="progress-bar progress-bar-striped" id="myBar" role="progressbar" ng-style="width" aria-valuenow="{{valore}}" aria-valuemin="0" aria-valuemax="100">{{valore}}%</div>
+            <div class="progress-bar progress-bar-striped" role="progressbar" ng-style="width" aria-valuenow="{{valore}}" aria-valuemin="0" aria-valuemax="100">{{valore}}%</div>
          </div>
       </div>
       <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.6.0/dist/umd/popper.min.js" integrity="sha384-KsvD1yqQ1/1+IA7gi3P0tyJcT3vR+NdBTt13hSJ2lnve8agRGXTTyNaBYmCR/Nwi" crossorigin="anonymous"></script>
